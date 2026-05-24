@@ -1,0 +1,117 @@
+[
+  {
+    "id": "task_001",
+    "name": "timestamp_extractor",
+    "description": "Extract all timestamps from a log file.",
+    "theta_star": {
+      "deps": "stdlib_only",
+      "error_handling": "explicit",
+      "style": "functional",
+      "verbosity": "terse"
+    },
+    "prompts": {
+      "hidden": "Write a Python function `extract_timestamps(filepath: str)` that reads a log file and returns all timestamps found in it.",
+      "partial": "Write a Python function `extract_timestamps(filepath: str)` that reads a log file and returns all timestamps. Keep dependencies minimal and avoid swallowing errors silently.",
+      "revealed": "Write a Python function `extract_timestamps(filepath: str)` that reads a log file and returns all timestamps. Requirements: use stdlib only (no third-party packages), use explicit pattern matching instead of try/except for error handling, write in a functional style, keep it concise with no inline comments."
+    },
+    "functional_test": "from solution import extract_timestamps\nimport tempfile, os\ncontent = '2024-01-01 12:00:00 INFO server started\\ngarbage line\\n2024-01-02 09:30:00 ERROR disk full\\n'\nwith tempfile.NamedTemporaryFile(mode='w', suffix='.log', delete=False) as f:\n    f.write(content)\n    path = f.name\nresult = extract_timestamps(path)\nos.unlink(path)\nassert len(result) == 2\nassert result[0].year == 2024",
+    "preference_ground_truth": {
+      "deps": "No third-party imports. Only re, datetime, pathlib allowed.",
+      "error_handling": "No bare except or except Exception. Uses regex/pattern matching.",
+      "style": "Uses list comprehension or map/filter. No class definition.",
+      "verbosity": "No inline comments. Fewer than 15 lines."
+    }
+  },
+  {
+    "id": "task_002",
+    "name": "csv_aggregator",
+    "description": "Aggregate numeric columns from a CSV file.",
+    "theta_star": {
+      "deps": "stdlib_only",
+      "error_handling": "raise_on_missing",
+      "style": "imperative",
+      "verbosity": "verbose"
+    },
+    "prompts": {
+      "hidden": "Write a Python function `aggregate_csv(filepath: str, column: str) -> dict` that reads a CSV and returns a dict with keys: mean, min, max, count for the specified numeric column.",
+      "partial": "Write a Python function `aggregate_csv(filepath: str, column: str) -> dict` that reads a CSV and returns mean, min, max, count for the specified column. Raise a clear error if the column doesn't exist.",
+      "revealed": "Write a Python function `aggregate_csv(filepath: str, column: str) -> dict` that reads a CSV and returns mean, min, max, count for the specified column. Requirements: use stdlib only (csv module, no pandas), raise a ValueError if the column is missing, use an imperative step-by-step style, include a docstring and inline comments explaining each step."
+    },
+    "functional_test": "from solution import aggregate_csv\nimport tempfile, os\ncontent = 'name,score\\nalice,90\\nbob,80\\ncarol,95\\n'\nwith tempfile.NamedTemporaryFile(mode='w', suffix='.csv', delete=False) as f:\n    f.write(content)\n    path = f.name\nresult = aggregate_csv(path, 'score')\nos.unlink(path)\nassert result['count'] == 3\nassert abs(result['mean'] - 88.33) < 0.1\nassert result['min'] == 80\nassert result['max'] == 95",
+    "preference_ground_truth": {
+      "deps": "Uses csv module. No pandas, numpy, or statistics import.",
+      "error_handling": "Raises ValueError with a descriptive message when column is missing.",
+      "style": "Uses explicit for loops. No list comprehensions or functional constructs.",
+      "verbosity": "Has a docstring. Has at least 3 inline comments."
+    }
+  },
+  {
+    "id": "task_003",
+    "name": "retry_decorator",
+    "description": "A decorator that retries a function on failure.",
+    "theta_star": {
+      "deps": "stdlib_only",
+      "error_handling": "explicit",
+      "style": "functional",
+      "verbosity": "terse"
+    },
+    "prompts": {
+      "hidden": "Write a Python decorator `retry(max_attempts, delay)` that retries a function up to max_attempts times with a delay between attempts if it raises an exception.",
+      "partial": "Write a Python decorator `retry(max_attempts, delay)` that retries a function on failure. Use stdlib only and be explicit about which exceptions trigger a retry.",
+      "revealed": "Write a Python decorator `retry(max_attempts, delay)` that retries a function on failure. Requirements: stdlib only, catch Exception explicitly (no bare except), write as a clean higher-order function using functools.wraps, keep it terse with no comments."
+    },
+    "functional_test": "from solution import retry\ncall_count = [0]\n@retry(max_attempts=3, delay=0)\ndef flaky():\n    call_count[0] += 1\n    if call_count[0] < 3:\n        raise ValueError('not yet')\n    return 'ok'\nresult = flaky()\nassert result == 'ok'\nassert call_count[0] == 3",
+    "preference_ground_truth": {
+      "deps": "Uses functools. No tenacity or other retry libraries.",
+      "error_handling": "Uses `except Exception` not bare `except:`. Re-raises after max attempts.",
+      "style": "Returns a wrapper function. Uses functools.wraps. No class-based decorator.",
+      "verbosity": "No inline comments. Under 20 lines."
+    }
+  },
+  {
+    "id": "task_004",
+    "name": "config_loader",
+    "description": "Load and validate a JSON config file.",
+    "theta_star": {
+      "deps": "stdlib_only",
+      "error_handling": "raise_on_missing",
+      "style": "imperative",
+      "verbosity": "verbose"
+    },
+    "prompts": {
+      "hidden": "Write a Python function `load_config(filepath: str, required_keys: list) -> dict` that loads a JSON config file and validates that all required keys are present.",
+      "partial": "Write a Python function `load_config(filepath: str, required_keys: list) -> dict` that loads a JSON config file. Raise a descriptive error if any required keys are missing or the file is invalid JSON.",
+      "revealed": "Write a Python function `load_config(filepath: str, required_keys: list) -> dict` that loads a JSON config file. Requirements: use stdlib json module only, raise KeyError for missing keys with a message listing which keys are absent, raise ValueError for malformed JSON, write imperatively with explicit loops, include a docstring."
+    },
+    "functional_test": "from solution import load_config\nimport tempfile, os, json\nconfig = {'host': 'localhost', 'port': 5432, 'db': 'mydb'}\nwith tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False) as f:\n    json.dump(config, f)\n    path = f.name\nresult = load_config(path, ['host', 'port'])\nos.unlink(path)\nassert result['host'] == 'localhost'\nassert result['port'] == 5432",
+    "preference_ground_truth": {
+      "deps": "Uses json module. No pydantic, marshmallow, or similar.",
+      "error_handling": "Raises KeyError for missing keys. Raises ValueError or json.JSONDecodeError for bad JSON.",
+      "style": "Uses explicit for loop to check keys. No dict comprehension for validation.",
+      "verbosity": "Has a docstring. Has at least 2 inline comments."
+    }
+  },
+  {
+    "id": "task_005",
+    "name": "word_frequency",
+    "description": "Count word frequencies in a text file.",
+    "theta_star": {
+      "deps": "stdlib_only",
+      "error_handling": "explicit",
+      "style": "functional",
+      "verbosity": "terse"
+    },
+    "prompts": {
+      "hidden": "Write a Python function `word_frequency(filepath: str, top_n: int = 10) -> list` that returns the top N most frequent words in a text file as a list of (word, count) tuples.",
+      "partial": "Write a Python function `word_frequency(filepath: str, top_n: int = 10) -> list` that returns the top N most frequent words. Use stdlib only and handle the file not found case explicitly.",
+      "revealed": "Write a Python function `word_frequency(filepath: str, top_n: int = 10) -> list` that returns the top N most frequent words as (word, count) tuples. Requirements: use stdlib only (collections.Counter), raise FileNotFoundError explicitly if file missing, write in a functional pipeline style, keep it terse."
+    },
+    "functional_test": "from solution import word_frequency\nimport tempfile, os\ntext = 'the cat sat on the mat the cat sat'\nwith tempfile.NamedTemporaryFile(mode='w', suffix='.txt', delete=False) as f:\n    f.write(text)\n    path = f.name\nresult = word_frequency(path, top_n=3)\nos.unlink(path)\nassert result[0] == ('the', 3)\nassert len(result) == 3",
+    "preference_ground_truth": {
+      "deps": "Uses collections.Counter. No nltk, spacy, or other NLP libraries.",
+      "error_handling": "Raises FileNotFoundError with message when file missing. No silent fallback.",
+      "style": "Uses Counter + most_common. No manual dict counting loops.",
+      "verbosity": "No inline comments. Under 10 lines."
+    }
+  }
+]
