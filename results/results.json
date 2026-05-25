@@ -1,0 +1,663 @@
+[
+  {
+    "grade_results": {
+      "functional": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "tests passed",
+        "expected": "all tests pass"
+      },
+      "deps": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "stdlib only - OK",
+        "expected": "stdlib_only"
+      },
+      "error_handling": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "no bare except - OK",
+        "expected": "explicit"
+      },
+      "style": {
+        "score": 0.0,
+        "passed": false,
+        "reason": "no comprehensions/functional constructs found",
+        "expected": "functional"
+      },
+      "verbosity": {
+        "score": 0.0,
+        "passed": false,
+        "reason": "found 1 inline comment(s)",
+        "expected": "terse"
+      }
+    },
+    "functional_score": 1.0,
+    "preference_score": 0.5,
+    "reward": 0.65,
+    "num_questions": 1,
+    "revealed_dimensions": [],
+    "task_name": "timestamp_extractor",
+    "task_id": "task_001",
+    "visibility": "hidden",
+    "model": "gpt-4o"
+  },
+  {
+    "grade_results": {
+      "functional": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "tests passed",
+        "expected": "all tests pass"
+      },
+      "deps": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "stdlib only - OK",
+        "expected": "stdlib_only"
+      },
+      "error_handling": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "no bare except - OK",
+        "expected": "explicit"
+      },
+      "style": {
+        "score": 0.0,
+        "passed": false,
+        "reason": "no comprehensions/functional constructs found",
+        "expected": "functional"
+      },
+      "verbosity": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "terse - no inline comments - OK",
+        "expected": "terse"
+      }
+    },
+    "functional_score": 1.0,
+    "preference_score": 0.75,
+    "reward": 0.775,
+    "num_questions": 1,
+    "revealed_dimensions": [],
+    "task_name": "timestamp_extractor",
+    "task_id": "task_001",
+    "visibility": "partial",
+    "model": "gpt-4o"
+  },
+  {
+    "grade_results": {
+      "functional": {
+        "score": 0.0,
+        "passed": false,
+        "reason": "________________________\n/var/folders/rg/18ktbtpd53j7g5lm4pf03gkm0000gn/T/tmpdw835coz/test_solution.py:13: in test_preference\n    assert len(result) == 2\nE   assert 0 == 2\nE    +  where 0 = len([])\n=========================== short test summary info ============================\nFAILED ../../../../../../../var/folders/rg/18ktbtpd53j7g5lm4pf03gkm0000gn/T/tmpdw835coz/test_solution.py::test_preference\n!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!\n1 failed in 0.01s",
+        "expected": "all tests pass"
+      },
+      "deps": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "stdlib only - OK",
+        "expected": "stdlib_only"
+      },
+      "error_handling": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "no bare except - OK",
+        "expected": "explicit"
+      },
+      "style": {
+        "score": 0.0,
+        "passed": false,
+        "reason": "no comprehensions/functional constructs found",
+        "expected": "functional"
+      },
+      "verbosity": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "terse - no inline comments - OK",
+        "expected": "terse"
+      }
+    },
+    "functional_score": 0.0,
+    "preference_score": 0.75,
+    "reward": 0.275,
+    "num_questions": 1,
+    "revealed_dimensions": [],
+    "task_name": "timestamp_extractor",
+    "task_id": "task_001",
+    "visibility": "revealed",
+    "model": "gpt-4o"
+  },
+  {
+    "grade_results": {
+      "functional": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "tests passed",
+        "expected": "all tests pass"
+      },
+      "deps": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "stdlib only - OK",
+        "expected": "stdlib_only"
+      },
+      "error_handling": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "raises on error - OK",
+        "expected": "raise_on_missing"
+      },
+      "style": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "imperative style (explicit loops) - OK",
+        "expected": "imperative"
+      },
+      "verbosity": {
+        "score": 0.0,
+        "passed": false,
+        "reason": "missing docstring",
+        "expected": "verbose"
+      }
+    },
+    "functional_score": 1.0,
+    "preference_score": 0.75,
+    "reward": 0.775,
+    "num_questions": 1,
+    "revealed_dimensions": [
+      "error_handling"
+    ],
+    "task_name": "csv_aggregator",
+    "task_id": "task_002",
+    "visibility": "hidden",
+    "model": "gpt-4o"
+  },
+  {
+    "grade_results": {
+      "functional": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "tests passed",
+        "expected": "all tests pass"
+      },
+      "deps": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "stdlib only - OK",
+        "expected": "stdlib_only"
+      },
+      "error_handling": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "raises on error - OK",
+        "expected": "raise_on_missing"
+      },
+      "style": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "imperative style (explicit loops) - OK",
+        "expected": "imperative"
+      },
+      "verbosity": {
+        "score": 0.0,
+        "passed": false,
+        "reason": "missing docstring",
+        "expected": "verbose"
+      }
+    },
+    "functional_score": 1.0,
+    "preference_score": 0.75,
+    "reward": 0.775,
+    "num_questions": 1,
+    "revealed_dimensions": [
+      "error_handling"
+    ],
+    "task_name": "csv_aggregator",
+    "task_id": "task_002",
+    "visibility": "partial",
+    "model": "gpt-4o"
+  },
+  {
+    "grade_results": {
+      "functional": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "tests passed",
+        "expected": "all tests pass"
+      },
+      "deps": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "stdlib only - OK",
+        "expected": "stdlib_only"
+      },
+      "error_handling": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "raises on error - OK",
+        "expected": "raise_on_missing"
+      },
+      "style": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "imperative style (explicit loops) - OK",
+        "expected": "imperative"
+      },
+      "verbosity": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "verbose - has docstring and comments - OK",
+        "expected": "verbose"
+      }
+    },
+    "functional_score": 1.0,
+    "preference_score": 1.0,
+    "reward": 0.9,
+    "num_questions": 1,
+    "revealed_dimensions": [
+      "error_handling"
+    ],
+    "task_name": "csv_aggregator",
+    "task_id": "task_002",
+    "visibility": "revealed",
+    "model": "gpt-4o"
+  },
+  {
+    "grade_results": {
+      "functional": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "tests passed",
+        "expected": "all tests pass"
+      },
+      "deps": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "stdlib only - OK",
+        "expected": "stdlib_only"
+      },
+      "error_handling": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "no bare except - OK",
+        "expected": "explicit"
+      },
+      "style": {
+        "score": 0.0,
+        "passed": false,
+        "reason": "no comprehensions/functional constructs found",
+        "expected": "functional"
+      },
+      "verbosity": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "terse - no inline comments - OK",
+        "expected": "terse"
+      }
+    },
+    "functional_score": 1.0,
+    "preference_score": 0.75,
+    "reward": 0.675,
+    "num_questions": 2,
+    "revealed_dimensions": [
+      "error_handling"
+    ],
+    "task_name": "retry_decorator",
+    "task_id": "task_003",
+    "visibility": "hidden",
+    "model": "gpt-4o"
+  },
+  {
+    "grade_results": {
+      "functional": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "tests passed",
+        "expected": "all tests pass"
+      },
+      "deps": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "stdlib only - OK",
+        "expected": "stdlib_only"
+      },
+      "error_handling": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "no bare except - OK",
+        "expected": "explicit"
+      },
+      "style": {
+        "score": 0.0,
+        "passed": false,
+        "reason": "no comprehensions/functional constructs found",
+        "expected": "functional"
+      },
+      "verbosity": {
+        "score": 0.0,
+        "passed": false,
+        "reason": "found 1 inline comment(s)",
+        "expected": "terse"
+      }
+    },
+    "functional_score": 1.0,
+    "preference_score": 0.5,
+    "reward": 0.55,
+    "num_questions": 2,
+    "revealed_dimensions": [
+      "error_handling"
+    ],
+    "task_name": "retry_decorator",
+    "task_id": "task_003",
+    "visibility": "partial",
+    "model": "gpt-4o"
+  },
+  {
+    "grade_results": {
+      "functional": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "tests passed",
+        "expected": "all tests pass"
+      },
+      "deps": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "stdlib only - OK",
+        "expected": "stdlib_only"
+      },
+      "error_handling": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "no bare except - OK",
+        "expected": "explicit"
+      },
+      "style": {
+        "score": 0.0,
+        "passed": false,
+        "reason": "no comprehensions/functional constructs found",
+        "expected": "functional"
+      },
+      "verbosity": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "terse - no inline comments - OK",
+        "expected": "terse"
+      }
+    },
+    "functional_score": 1.0,
+    "preference_score": 0.75,
+    "reward": 0.775,
+    "num_questions": 1,
+    "revealed_dimensions": [
+      "error_handling"
+    ],
+    "task_name": "retry_decorator",
+    "task_id": "task_003",
+    "visibility": "revealed",
+    "model": "gpt-4o"
+  },
+  {
+    "grade_results": {
+      "functional": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "tests passed",
+        "expected": "all tests pass"
+      },
+      "deps": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "stdlib only - OK",
+        "expected": "stdlib_only"
+      },
+      "error_handling": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "raises on error - OK",
+        "expected": "raise_on_missing"
+      },
+      "style": {
+        "score": 0.0,
+        "passed": false,
+        "reason": "no explicit for loops found",
+        "expected": "imperative"
+      },
+      "verbosity": {
+        "score": 0.0,
+        "passed": false,
+        "reason": "missing docstring",
+        "expected": "verbose"
+      }
+    },
+    "functional_score": 1.0,
+    "preference_score": 0.5,
+    "reward": 0.65,
+    "num_questions": 1,
+    "revealed_dimensions": [
+      "error_handling"
+    ],
+    "task_name": "config_loader",
+    "task_id": "task_004",
+    "visibility": "hidden",
+    "model": "gpt-4o"
+  },
+  {
+    "grade_results": {
+      "functional": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "tests passed",
+        "expected": "all tests pass"
+      },
+      "deps": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "stdlib only - OK",
+        "expected": "stdlib_only"
+      },
+      "error_handling": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "raises on error - OK",
+        "expected": "raise_on_missing"
+      },
+      "style": {
+        "score": 0.0,
+        "passed": false,
+        "reason": "no explicit for loops found",
+        "expected": "imperative"
+      },
+      "verbosity": {
+        "score": 0.0,
+        "passed": false,
+        "reason": "missing docstring",
+        "expected": "verbose"
+      }
+    },
+    "functional_score": 1.0,
+    "preference_score": 0.5,
+    "reward": 0.65,
+    "num_questions": 1,
+    "revealed_dimensions": [
+      "error_handling"
+    ],
+    "task_name": "config_loader",
+    "task_id": "task_004",
+    "visibility": "partial",
+    "model": "gpt-4o"
+  },
+  {
+    "grade_results": {
+      "functional": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "tests passed",
+        "expected": "all tests pass"
+      },
+      "deps": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "stdlib only - OK",
+        "expected": "stdlib_only"
+      },
+      "error_handling": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "raises on error - OK",
+        "expected": "raise_on_missing"
+      },
+      "style": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "imperative style (explicit loops) - OK",
+        "expected": "imperative"
+      },
+      "verbosity": {
+        "score": 0.0,
+        "passed": false,
+        "reason": "only 0 inline comment(s), expected >= 2",
+        "expected": "verbose"
+      }
+    },
+    "functional_score": 1.0,
+    "preference_score": 0.75,
+    "reward": 0.775,
+    "num_questions": 1,
+    "revealed_dimensions": [],
+    "task_name": "config_loader",
+    "task_id": "task_004",
+    "visibility": "revealed",
+    "model": "gpt-4o"
+  },
+  {
+    "grade_results": {
+      "functional": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "tests passed",
+        "expected": "all tests pass"
+      },
+      "deps": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "stdlib only - OK",
+        "expected": "stdlib_only"
+      },
+      "error_handling": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "no bare except - OK",
+        "expected": "explicit"
+      },
+      "style": {
+        "score": 0.0,
+        "passed": false,
+        "reason": "no comprehensions/functional constructs found",
+        "expected": "functional"
+      },
+      "verbosity": {
+        "score": 0.0,
+        "passed": false,
+        "reason": "found 5 inline comment(s)",
+        "expected": "terse"
+      }
+    },
+    "functional_score": 1.0,
+    "preference_score": 0.5,
+    "reward": 0.65,
+    "num_questions": 1,
+    "revealed_dimensions": [],
+    "task_name": "word_frequency",
+    "task_id": "task_005",
+    "visibility": "hidden",
+    "model": "gpt-4o"
+  },
+  {
+    "grade_results": {
+      "functional": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "tests passed",
+        "expected": "all tests pass"
+      },
+      "deps": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "stdlib only - OK",
+        "expected": "stdlib_only"
+      },
+      "error_handling": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "no bare except - OK",
+        "expected": "explicit"
+      },
+      "style": {
+        "score": 0.0,
+        "passed": false,
+        "reason": "no comprehensions/functional constructs found",
+        "expected": "functional"
+      },
+      "verbosity": {
+        "score": 0.0,
+        "passed": false,
+        "reason": "found 1 inline comment(s)",
+        "expected": "terse"
+      }
+    },
+    "functional_score": 1.0,
+    "preference_score": 0.5,
+    "reward": 0.65,
+    "num_questions": 1,
+    "revealed_dimensions": [],
+    "task_name": "word_frequency",
+    "task_id": "task_005",
+    "visibility": "partial",
+    "model": "gpt-4o"
+  },
+  {
+    "grade_results": {
+      "functional": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "tests passed",
+        "expected": "all tests pass"
+      },
+      "deps": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "stdlib only - OK",
+        "expected": "stdlib_only"
+      },
+      "error_handling": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "no bare except - OK",
+        "expected": "explicit"
+      },
+      "style": {
+        "score": 0.0,
+        "passed": false,
+        "reason": "no comprehensions/functional constructs found",
+        "expected": "functional"
+      },
+      "verbosity": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "terse - no inline comments - OK",
+        "expected": "terse"
+      }
+    },
+    "functional_score": 1.0,
+    "preference_score": 0.75,
+    "reward": 0.775,
+    "num_questions": 1,
+    "revealed_dimensions": [],
+    "task_name": "word_frequency",
+    "task_id": "task_005",
+    "visibility": "revealed",
+    "model": "gpt-4o"
+  }
+]

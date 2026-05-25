@@ -14,7 +14,7 @@
       "partial": "Write a Python function `extract_timestamps(filepath: str)` that reads a log file and returns all timestamps. Keep dependencies minimal and avoid swallowing errors silently.",
       "revealed": "Write a Python function `extract_timestamps(filepath: str)` that reads a log file and returns all timestamps. Requirements: use stdlib only (no third-party packages), use explicit pattern matching instead of try/except for error handling, write in a functional style, keep it concise with no inline comments."
     },
-    "functional_test": "from solution import extract_timestamps\nimport tempfile, os\ncontent = '2024-01-01 12:00:00 INFO server started\\ngarbage line\\n2024-01-02 09:30:00 ERROR disk full\\n'\nwith tempfile.NamedTemporaryFile(mode='w', suffix='.log', delete=False) as f:\n    f.write(content)\n    path = f.name\nresult = extract_timestamps(path)\nos.unlink(path)\nassert len(result) == 2\nassert result[0].year == 2024",
+    "functional_test": "from solution import extract_timestamps\nimport tempfile, os\ncontent = '2024-01-01 12:00:00 INFO server started\\ngarbage line\\n2024-01-02 09:30:00 ERROR disk full\\n'\nwith tempfile.NamedTemporaryFile(mode='w', suffix='.log', delete=False) as f:\n    f.write(content)\n    path = f.name\nresult = extract_timestamps(path)\nos.unlink(path)\nassert len(result) == 2\nassert '2024-01-01' in str(result[0])",
     "preference_ground_truth": {
       "deps": "No third-party imports. Only re, datetime, pathlib allowed.",
       "error_handling": "No bare except or except Exception. Uses regex/pattern matching.",

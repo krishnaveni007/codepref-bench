@@ -78,7 +78,7 @@ import re
 def run_agent_episode(
     task: dict,
     visibility: str,
-    client: anthropic.Anthropic,
+    client: OpenAI,
     model: str,
     verbose: bool = True,
 ) -> dict:
